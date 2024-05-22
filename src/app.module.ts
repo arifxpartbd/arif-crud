@@ -14,11 +14,11 @@ import { CitiesModule } from './cities/cities.module';
       inject: [ConfigService],
       useFactory: (conigService: ConfigService) => ({
         type: 'postgres',
-        host: conigService.get('DB_HOST'),
-        port: +conigService.get('DB_PORT'),
-        username: conigService.get('DB_USERNAME'),
-        password: conigService.get('DB_PASSWORD'),
-        database: conigService.get('DB_NAME'),    
+        host: conigService.get('DATABASE_HOST'),
+        port: +conigService.get('DATABASE_PORT'),
+        username: conigService.get('DATABASE_USER'),
+        password: conigService.get('DATABASE_PASSWORD'),
+        database: conigService.get('DATABASE_NAME'),    
         entities: [join(process.cwd(), 'dist/**/*.entity.js')],
         //do not use synchronize : true in real project
         synchronize: true,
